@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#faf9f7">
+    <meta name="description" content="A responsive video discovery experience built with HTML, CSS, and vanilla JavaScript.">
+    <link rel="icon" href="data:,">
+    <title>YouTube Clone - Discover</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-area">
+        <button class="icon-button menu-button" id="menu-toggle" type="button" aria-label="Toggle navigation" title="Toggle navigation">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+        <a class="brand" href="#home" aria-label="YouTube Clone home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 7.5 16 12l-6.5 4.5z" /></svg></span>
+          <span class="brand-word">YouTube<span class="brand-country">CLONE</span></span>
+        </a>
+      </div>
+
+      <form class="search-form" id="search-form" role="search">
+        <label class="visually-hidden" for="search-input">Search videos</label>
+        <input id="search-input" type="search" placeholder="Search videos, creators, and more" autocomplete="off">
+        <button class="search-submit" type="submit" aria-label="Search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" /><path d="m16 16 4.5 4.5" /></svg>
+        </button>
+        <button class="icon-button voice-button" type="button" aria-label="Voice search" title="Voice search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3" /><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21m-3 0h6" /></svg>
+        </button>
+      </form>
+
+      <div class="top-actions">
+        <button class="icon-button create-button" type="button" aria-label="Create" title="Create a video">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg><span>Create</span>
+        </button>
+        <button class="icon-button notification-button" type="button" aria-label="Notifications" title="Notifications">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9m-8 12h4" /></svg><span class="notification-dot"></span>
+        </button>
+        <button class="profile-button" type="button" aria-label="Account menu">A</button>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <nav class="primary-nav">
+        <a class="nav-item is-current" href="#home" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" /></svg><span>Home</span></a>
+        <a class="nav-item" href="#shorts" data-category="Shorts"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 3 5.5 3.2a3 3 0 0 1 0 5.2l-3.1 1.8 3.1 1.8a3 3 0 0 1 0 5.2L14.5 23a3 3 0 0 1-4.5-2.6v-3.6l-3.1 1.8a3 3 0 0 1-4.5-2.6V8a3 3 0 0 1 4.5-2.6L10 7.2V5.6A3 3 0 0 1 14.5 3Z" /><path d="m10 10 4 2-4 2z" /></svg><span>Shorts</span></a>
+        <a class="nav-item" href="#subscriptions"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v13H4zM8 21h8M12 18v3M9 9l6 3-6 3z" /></svg><span>Subscriptions</span></a>
+      </nav>
+      <div class="nav-rule"></div>
+      <div class="sidebar-heading">YOU <span class="chevron">›</span></div>
+      <nav class="secondary-nav">
+        <a class="nav-item" href="#history"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.6-6.4L3 8m0-5v5h5m4-1v5l3 2" /></svg><span>History</span></a>
+        <a class="nav-item" href="#playlists"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h10m-10 5h10m6-4v8m-4-4h8" /></svg><span>Playlists</span></a>
+        <a class="nav-item" href="#watch-later"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg><span>Watch later</span></a>
+        <a class="nav-item" href="#liked"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2zm0 0 5-8a3 3 0 0 1 2 3l-1 5h5a3 3 0 0 1 3 4l-2 7H7" /></svg><span>Liked videos</span></a>
+      </nav>
+      <div class="nav-rule"></div>
+      <p class="sidebar-note">A little inspiration<br>for your next watch.</p>
+      <div class="sidebar-footer">About &nbsp; Press &nbsp; Copyright<br>Contact us &nbsp; Creators<br><br>© 2026 Video discovery</div>
+    </aside>
+
+    <main class="main-content" id="home">
+      <div class="mobile-heading"><span>Discover</span><span class="live-indicator"><i></i> FRESH PICKS</span></div>
+      <div class="category-bar" id="category-bar" role="group" aria-label="Filter videos by category">
+        <button class="category-chip is-selected" type="button" data-category="All">All</button>
+        <button class="category-chip" type="button" data-category="Music">Music</button>
+        <button class="category-chip" type="button" data-category="Gaming">Gaming</button>
+        <button class="category-chip" type="button" data-category="Mixes">Mixes</button>
+        <button class="category-chip" type="button" data-category="Live">Live</button>
+        <button class="category-chip" type="button" data-category="Coding">Coding</button>
+        <button class="category-chip" type="button" data-category="Travel">Travel</button>
+        <button class="category-chip" type="button" data-category="Food">Food</button>
+        <button class="category-chip" type="button" data-category="Design">Design</button>
+        <button class="category-chip" type="button" data-category="Recently uploaded">Recently uploaded</button>
+      </div>
+      <section class="feed-section" aria-labelledby="feed-title">
+        <div class="feed-heading">
+          <div>
+            <p class="eyebrow">YOUR NEXT RABBIT HOLE</p>
+            <h1 id="feed-title">Discover <span class="heading-period">.</span></h1>
+          </div>
+          <div class="feed-meta"><span class="feed-count" id="feed-count"></span><span class="meta-divider"></span><span>Updated for you</span></div>
+        </div>
+        <div class="video-grid" id="video-grid" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <div class="empty-symbol">⌕</div>
+          <h2>No videos found</h2>
+          <p>Try a different search or category.</p>
+          <button class="reset-button" id="reset-filters" type="button">Show all videos</button>
+        </div>
+      </section>
+      <footer class="mobile-footer">Made for curious minds <span>·</span> © 2026</footer>
+    </main>
+
+    <dialog class="video-dialog" id="video-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-bar">
+        <span class="dialog-brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 7.5 16 12l-6.5 4.5z" /></svg></span> Now playing</span>
+        <button class="icon-button close-dialog" id="close-dialog" type="button" aria-label="Close video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+      </div>
+      <div class="player-frame" id="player-frame"></div>
+      <div class="dialog-info"><div><p class="eyebrow">VIDEO PREVIEW</p><h2 id="dialog-title"></h2><p id="dialog-channel"></p></div><a id="watch-on-youtube" class="watch-link" target="_blank" rel="noopener noreferrer">Watch on YouTube <span>↗</span></a></div>
+    </dialog>
+    <div class="dialog-backdrop" id="dialog-backdrop"></div>
+  </body>
+</html>
