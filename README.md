@@ -20,12 +20,7 @@ A responsive video discovery interface inspired by YouTube, built with plain HTM
 
 ## Screenshots
 
-Add screenshots of the homepage here, for example:
-
-```md
-![Desktop homepage](assets/images/desktop.png)
-![Mobile homepage](assets/images/mobile.png)
-```
+Screenshots will be added here.
 
 ## Installation
 
